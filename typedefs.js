@@ -5,7 +5,6 @@
  * @property {string} name - player's name.
  * @property {PlayerPositionsEnum} position - player's position.
  * @property {number} teamid - player's team id.
-
  */
 
 /**
@@ -22,10 +21,10 @@
  * @enum {string}
  */
 const PlayerPositionsEnum = {
-   Forward: "Forward",
-   Midfielder: "Midfielder",
-   Defender: "Defender",
-   Goalkeeper: "Goalkeeper"
+    Forward: "Forward",
+    Midfielder: "Midfielder",
+    Defender: "Defender",
+    Goalkeeper: "Goalkeeper"
 };
 
 exports.PlayerPositionsEnum = PlayerPositionsEnum;

@@ -1,1 +1,26 @@
-[{"id":1,"name":"Real Angular"},{"id":2,"name":"FC React"},{"id":3,"name":"Vue Boys"},{"id":4,"name":"Sporting JS"},{"id":5,"name":"Athletico Mongo"},{"id":6,"name":"CSS United"}]
+[
+    {
+        "id": 1,
+        "name": "Real Angular"
+    },
+    {
+        "id": 2,
+        "name": "FC React"
+    },
+    {
+        "id": 3,
+        "name": "Vue Boys"
+    },
+    {
+        "id": 4,
+        "name": "Sporting JS"
+    },
+    {
+        "id": 5,
+        "name": "Athletico Mongo"
+    },
+    {
+        "id": 6,
+        "name": "CSS United"
+    }
+]

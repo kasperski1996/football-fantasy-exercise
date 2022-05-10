@@ -119,6 +119,9 @@ const app = {
             */
             const target = e.target;
 
+            let editedObj = {};
+
+
             target.parentElement.parentElement
                 .querySelectorAll('td[data-field] input').forEach(e => {
                     const span = document.createElement('span');
@@ -128,6 +131,7 @@ const app = {
 
             target.parentElement.parentElement
                 .querySelectorAll('td[data-field="teamid"] select').forEach(e => {
+                    editedObj.teamid = e.value;
                     const span = document.createElement('span');
                     span.innerText = app.data.teams.find(t => t.id == e.value).name;
                     e.parentNode.replaceChild(span, e);
@@ -138,14 +142,13 @@ const app = {
                     span.innerText = e.value;
                     e.parentNode.replaceChild(span, e);
                 });
-            let editedObj = {};
             target.parentElement.parentElement
-                .querySelectorAll('td[data-field]').forEach(i => editedObj[i.dataset.field] = i.innerText);
+                .querySelectorAll('td[data-field]:not([data-field="teamid"])').forEach(i => editedObj[i.dataset.field] = i.innerText);
 
             Array.from(target.parentElement.querySelectorAll('button')).find(b => b != target).classList.remove('d-none');
             target.classList.add('d-none');
 
-            fetch(API_ENDPOINTS.Player, {
+            fetch(API_ENDPOINTS.Player + '/' + editedObj.id, {
                 method: 'PUT',
                 headers: {
                     'Content-type': 'application/json'
