@@ -2,40 +2,43 @@
 <html lang="en">
 
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css"
-      integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
 </head>
 
 <body>
-   <section class="container">
-      <h2>Add player</h2>
-      <form name="add-player">
-         <label>Player name: <input name='player-name'></label>
-         <label>Player team:
-            <select name='player-team'></select>
-         </label>
-         <button>Add player</button>
-      </form>
-      <hr>
-   </section>
-   <section class="container">
-      <h2>All players</h2>
-      <table class="table table-striped">
-         <thead>
+    <section class="container">
+        <h2>Add player</h2>
+        <form name="add-player">
+            <label>Player name: <input name='player-name'></label>
+            <label>Player team:
+                <select name='player-team'></select>
+            </label>
+            <label>Player position:
+                <select name='player-position'></select>
+            </label>
+            <button>Add player</button>
+        </form>
+        <hr>
+    </section>
+    <section class="container">
+        <h2>All players</h2>
+        <table class="table table-striped">
+            <thead>
 
-         </thead>
-         <tbody id="players-list"></tbody>
-         <tbody>
+            </thead>
+            <tbody id="players-list"></tbody>
+            <tbody>
 
-         </tbody>
-      </table>
-   </section>
+            </tbody>
+        </table>
+    </section>
 
-   <script src='script.js'> </script>
+    <script src='script.js'> </script>
 </body>
 
 </html>
