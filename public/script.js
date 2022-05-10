@@ -38,7 +38,7 @@ const htmlUtils = {
 }
 
 const API_ENDPOINTS = {
-   Player: '/player'
+   Player: '/api/player'
 }
 const app = {
    elements: {
@@ -105,7 +105,7 @@ const app = {
    }
 }
 
-fetch('/team')
+fetch('/api/team')
    .then(res => res.json())
    .then(res => app.data.teams = res)
    .then(() => fetch(API_ENDPOINTS.Player))
