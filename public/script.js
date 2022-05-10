@@ -45,6 +45,7 @@ const API_ENDPOINTS = {
     Player: '/api/player',
     PlayerPositions: '/api/player/position'
 }
+
 const app = {
     elements: {
         addPlayerForm: document.forms[0],
@@ -58,10 +59,14 @@ const app = {
     listeners: {
         addPlayerBtn: function (e) {
             e.preventDefault();
-            console.log(e.target);
+            const formToObj = Object.values(e.target).map(inp => ({ name: inp.name, value: inp.value })).filter(o => o.name);
+
             fetch(API_ENDPOINTS.Player, {
                 method: 'POST',
-                body: new FormData(e.target)
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                },
+                body: formToObj.map(o => encodeURIComponent(o.name) + '=' + encodeURIComponent(o.value)).join('&')
             });
         },
         editPlayerBtn: function (e) {
@@ -165,6 +170,13 @@ fetch('/api/team')
 
 function main() {
     app.data.teams.map(team => app.elements.addPlayerForm['player-team'].appendChild(htmlUtils.teamObjectToOptionElementMapper(team)));
+    app.data.playerPositions.forEach(playerPosition => {
+        const option = document.createElement('option');
+        option.value = playerPosition;
+        option.appendChild(document.createTextNode(playerPosition));
+        app.elements.addPlayerForm['player-position'].appendChild(option);
+    });
+
     app.data.players.map(player => app.elements.playersTable.appendChild(htmlUtils.playerObjectToRowElementMapper(player)));
 
     app.elements.addPlayerForm.addEventListener('submit', app.listeners.addPlayerBtn);
