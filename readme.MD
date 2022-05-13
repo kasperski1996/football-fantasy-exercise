@@ -1,3 +1,28 @@
+## Rest
+### HTTP Verbs
+- `GET`: get model/s
+- `POST`: create model
+- `PUT`: update model
+- `DELETE`: delete model
+
+### Content-type
+- `www-form`: HTML form content type
+- `application/json`: JSON content type
+
+### Parameters - Content
+- `body`: `POST`, `PUT`
+- `querystring`: `POST`, `PUT`, `GET`, `DELETE` (ex: http://example.com/api/a?par1=1&par2=2)
+- `params`: inside url segment `POST`, `PUT`, `GET`, `DELETE` (ex: http://example.com/api/a/1)
+
+### HTTP Status
+#### Success statuses
+- `201`: `post` created successfuly
+- `200`: `get`, `put`
+- `204`: `delete`
+
+## Data Access Layer - DAL
+
+
 To join the game select a fantasy football squad of 15 players, consisting of:
 
 2 Goalkeepers

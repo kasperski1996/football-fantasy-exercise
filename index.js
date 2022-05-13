@@ -5,6 +5,7 @@ const dal = require('./DAL');
 
 // Routers
 const playersCtrl = require('./controllers/player.ctrl');
+const teamCtrl = require('./controllers/team.ctrl');
 
 app.use('/', express.static('public'));
 
@@ -14,10 +15,7 @@ app.use(express.urlencoded({
 app.use(express.json());
 
 app.use('/api/player', playersCtrl);
+app.use('/api/team', teamCtrl);
 
-app.get('/api/team', function (req, res) {
-    const teams = dal.read('team');
-    res.send(teams);
-})
 
 app.listen(PORT, () => console.log(`server started at port ${PORT}`))

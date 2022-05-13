@@ -13,9 +13,9 @@ function read(type) {
 function readOne(type, id) {
     switch (type) {
         case 'player':
-            return JSON.parse(fs.readFileSync('./data/players.json', 'utf-8')).find(p => p.id == id);
+            return read(type).find(p => p.id == id);
         case 'team':
-            return JSON.parse(fs.readFileSync('./data/teams.json', 'utf-8')).find(t => t.id == id);;
+            return read(type).find(t => t.id == id);
     }
 }
 
