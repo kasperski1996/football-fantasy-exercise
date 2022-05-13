@@ -40,6 +40,9 @@ function add(type, entity) {
             break;
         case 'team':
             file = './data/teams.json';
+            break;  
+            case 'user':
+            file = './data/user.json';
             break;
     }
 
