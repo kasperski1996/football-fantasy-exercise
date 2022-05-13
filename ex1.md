@@ -1,5 +1,6 @@
 ## Add user controller
 ### Model
+- `id`
 - `first`
 - `last`
 - `email`
